@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router";
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router'
 
 function Post() {
-  let { postSlug } = useParams();
+  let { postSlug } = useParams()
 
   useEffect(() => {
     // Fetch post using the postSlug
-  }, [postSlug]);
+  }, [postSlug])
 
   return (
     <div className="home">
@@ -33,7 +33,7 @@ function Post() {
         </p>
       </div>
     </div>
-  );
+  )
 }
 
-export default Post;
+export default Post

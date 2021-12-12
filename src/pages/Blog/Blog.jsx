@@ -1,5 +1,5 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 function Blog() {
   return (
@@ -9,7 +9,7 @@ function Blog() {
         <Outlet />
       </div>
     </div>
-  );
+  )
 }
 
-export default Blog;
+export default Blog

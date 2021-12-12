@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Posts() {
   return (
@@ -27,7 +27,7 @@ function Posts() {
         </Link>
       </div>
     </div>
-  );
+  )
 }
 
-export default Posts;
+export default Posts

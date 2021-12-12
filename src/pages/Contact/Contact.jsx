@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function Contact() {
   return (
@@ -24,7 +24,7 @@ function Contact() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Contact;
+export default Contact
