@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-const Blog = () => (
+export const Blog = () => (
   <div className="home">
     <div className="container">
       <h1 className="text-center mt-5">Blog page</h1>
@@ -9,5 +9,3 @@ const Blog = () => (
     </div>
   </div>
 )
-
-export default Blog

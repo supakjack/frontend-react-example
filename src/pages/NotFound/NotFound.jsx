@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Home = () => (
+export const NotFound = () => (
   <div className="home">
     <div className="container">
       <div className="row align-items-center my-5">
@@ -24,5 +24,3 @@ const Home = () => (
     </div>
   </div>
 )
-
-export default Home

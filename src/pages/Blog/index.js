@@ -1,3 +1,3 @@
-export { default as Blog } from './Blog'
-export { default as Post } from './Post'
-export { default as Posts } from './Posts'
+export * from './Blog'
+export * from './Post'
+export * from './Posts'

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Contact = () => (
+export const Contact = () => (
   <div className="contact">
     <div className="container">
       <div className="row align-items-center my-5">
@@ -24,5 +24,3 @@ const Contact = () => (
     </div>
   </div>
 )
-
-export default Contact
