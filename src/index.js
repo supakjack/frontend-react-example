@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { Home, About, Contact, Blog, Posts, Post } from './pages'
-import {Footer, Navigation } from './components'
+import { Home, About, Contact, Blog, Posts, Post, NotFound } from './pages'
+import { Footer, Navigation } from './components'
 
 ReactDOM.render(
   <Router>
@@ -16,6 +16,7 @@ ReactDOM.render(
         <Route path="" element={<Posts />} />
         <Route path=":postSlug" element={<Post />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer />
   </Router>,
