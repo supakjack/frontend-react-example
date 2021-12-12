@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 
-function Post() {
-  let { postSlug } = useParams()
+const Post = () => {
+  const { postSlug } = useParams()
 
   useEffect(() => {
-    // Fetch post using the postSlug
+    console.log('change postSlug')
   }, [postSlug])
 
   return (
