@@ -1,7 +1,18 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { Home, About, Contact, Blog, Posts, Post, NotFound , Translate } from './pages'
+import {
+  Home,
+  About,
+  Contact,
+  Blog,
+  Posts,
+  Post,
+  NotFound,
+  Translate
+} from './pages'
 import { Footer, Navigation } from './components'
 import { AboutProvider, PostsProvider, PostProvider } from './contexts'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './plugins'
 import './App.css'
 
 const App = () => {
