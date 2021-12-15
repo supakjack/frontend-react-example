@@ -1,8 +1,22 @@
 import React, { useContext, useEffect } from 'react'
 import { AboutContext } from '../../contexts'
+import { gql, useQuery } from '@apollo/client'
+
+const GET_POSTS = gql`
+  query {
+    posts {
+      id
+      content
+    }
+  }
+`
 
 export const About = () => {
   const { content, setContent } = useContext(AboutContext)
+
+  const { loading , data } = useQuery(GET_POSTS, {})
+  console.log(loading)
+  console.log(data)
 
   useEffect(() => {
     console.log('useEffect in About')

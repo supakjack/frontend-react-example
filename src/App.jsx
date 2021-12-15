@@ -15,6 +15,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './plugins'
 import './App.css'
 
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
+
+const client = new ApolloClient({
+  uri: 'http://localhost:8055/graphql',
+  cache: new InMemoryCache()
+})
+
 const App = () => {
   return (
     <Router>
@@ -24,9 +31,11 @@ const App = () => {
         <Route
           path="/about"
           element={
-            <AboutProvider>
-              <About />
-            </AboutProvider>
+            <ApolloProvider client={client}>
+              <AboutProvider>
+                <About />
+              </AboutProvider>
+            </ApolloProvider>
           }
         />
         <Route path="/contact" element={<Contact />} />
