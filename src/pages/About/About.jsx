@@ -1,20 +1,21 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AboutContext } from '../../contexts'
 import { gql, useQuery } from '@apollo/client'
-
-const GET_POSTS = gql`
-  query {
-    posts {
-      id
-      content
-    }
-  }
-`
+import { DefaultApiProvider } from './../../adapters'
 
 export const About = () => {
   const { content, setContent } = useContext(AboutContext)
+  const [posts, setPosts] = useState([])
 
-  const { loading , data } = useQuery(GET_POSTS, {})
+  const GET_POSTS = gql`
+    query {
+      posts {
+        id
+        content
+      }
+    }
+  `
+  const { loading, data } = useQuery(GET_POSTS, {})
   console.log(loading)
   console.log(data)
 
@@ -25,6 +26,17 @@ export const About = () => {
     ever since the 1500s, when an unknown printer took a galley of type
     and scrambled it to make a type specimen book.`)
   }, [setContent])
+
+  useEffect(() => {
+    DefaultApiProvider.get('/items/posts').then((result) => {
+      setPosts(result.data.data)
+      console.log(result.data.data)
+    })
+  }, [setPosts])
+
+  const post = posts.length
+    ? posts.map((result) => <p key={result.content}>{result.content}</p>)
+    : null
 
   return (
     <div className="about">
@@ -40,6 +52,7 @@ export const About = () => {
           <div className="col-lg-5">
             <h1 className="font-weight-light">About</h1>
             <p>{content}</p>
+            {post}
           </div>
         </div>
       </div>
