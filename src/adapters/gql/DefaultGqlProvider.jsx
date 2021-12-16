@@ -5,6 +5,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
-export const DefaultProvider = ({ children }) => {
+export const DefaultGqlProvider = ({ children }) => {
   return <ApolloProvider client={client}>{children}</ApolloProvider>
 }

@@ -19,13 +19,13 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './plugins'
 import './App.css'
-import { DefaultProvider } from './adapters/index'
+import { DefaultGqlProvider } from './adapters/index'
 
 const App = () => {
   return (
     <AppProvider>
       <Router>
-        <DefaultProvider>
+        <DefaultGqlProvider>
           <Navigation />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -60,7 +60,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
-        </DefaultProvider>
+        </DefaultGqlProvider>
       </Router>
     </AppProvider>
   )

@@ -1,1 +1,1 @@
-export * from './DefaultProvider'
+export * from './DefaultGqlProvider'
